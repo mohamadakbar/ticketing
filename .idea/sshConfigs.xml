@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="172.17.0.167" id="4b754030-38bd-4e76-a2f3-16e5579049e5" port="22" nameFormat="DESCRIPTIVE" username="sujoko" />
+      <sshConfig authType="PASSWORD" host="172.17.0.168" id="b64301d2-5365-4958-97fb-2cbe582c2f9b" port="22" nameFormat="DESCRIPTIVE" username="sujoko" />
+      <sshConfig authType="PASSWORD" host="172.17.0.227" id="c6741018-756f-4ff7-88c1-15318682d88b" port="22" nameFormat="DESCRIPTIVE" username="sujoko" />
+      <sshConfig authType="PASSWORD" host="172.17.0.225" id="aec0dfd4-f2b0-4e9a-baa4-4491b7e54008" port="22" nameFormat="DESCRIPTIVE" username="sujoko" />
+      <sshConfig authType="PASSWORD" host="172.17.0.226" id="f9f84652-ec07-4878-ac7e-0fc9f6adc295" port="22" nameFormat="DESCRIPTIVE" username="sujoko" />
+    </configs>
+  </component>
+</project>
