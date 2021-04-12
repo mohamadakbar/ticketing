@@ -700,28 +700,28 @@ Progress.prototype.draw = function(ctx){
       , y = half
       , rad = half - 1
       , fontSize = this._fontSize;
-  
+
     ctx.font = fontSize + 'px ' + this._font;
-  
+
     var angle = Math.PI * 2 * (percent / 100);
     ctx.clearRect(0, 0, size, size);
-  
+
     // outer circle
     ctx.strokeStyle = '#9f9f9f';
     ctx.beginPath();
     ctx.arc(x, y, rad, 0, angle, false);
     ctx.stroke();
-  
+
     // inner circle
     ctx.strokeStyle = '#eee';
     ctx.beginPath();
     ctx.arc(x, y, rad - 1, 0, angle, true);
     ctx.stroke();
-  
+
     // text
     var text = this._text || (percent | 0) + '%'
       , w = ctx.measureText(text).width;
-  
+
     ctx.fillText(
         text
       , x - w / 2 + 1
@@ -3512,7 +3512,7 @@ function NyanCat(runner) {
 }
 
 /**
- * Draw the nyan cat
+ * Draw the nyan category
  *
  * @api private
  */
@@ -3586,7 +3586,7 @@ NyanCat.prototype.drawRainbow = function(){
 };
 
 /**
- * Draw the nyan cat
+ * Draw the nyan category
  *
  * @api private
  */
@@ -3622,7 +3622,7 @@ NyanCat.prototype.drawNyanCat = function() {
 };
 
 /**
- * Draw nyan cat face.
+ * Draw nyan category face.
  *
  * @return {String}
  * @api private

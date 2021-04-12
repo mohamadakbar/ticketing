@@ -39,3 +39,9 @@ Route::get('ticket/detail/{id}', 'TicketController@show')->name('ticket.detail')
 Route::post('ticket/update/{id}', 'TicketController@update')->name('ticket.update');
 Route::post('ticket/store', 'TicketController@store')->name('ticket.store');
 
+Route::get('category', 'CategoryController@index')->name('category');
+Route::post('category/store', 'CategoryController@store')->name('category.store');
+Route::post('category/edit/{id}', 'CategoryController@edit')->name('category.edit');
+Route::post('category/update/', 'CategoryController@update')->name('category.update');
+Route::get('category/destroy/{id}', 'CategoryController@destroy')->name('category.destroy');
+

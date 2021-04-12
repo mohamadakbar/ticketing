@@ -3295,7 +3295,7 @@ function NyanCat(runner) {
 inherits(NyanCat, Base);
 
 /**
- * Draw the nyan cat
+ * Draw the nyan category
  *
  * @api private
  */
@@ -3370,7 +3370,7 @@ NyanCat.prototype.drawRainbow = function() {
 };
 
 /**
- * Draw the nyan cat
+ * Draw the nyan category
  *
  * @api private
  */
@@ -3404,7 +3404,7 @@ NyanCat.prototype.drawNyanCat = function() {
 };
 
 /**
- * Draw nyan cat face.
+ * Draw nyan category face.
  *
  * @api private
  * @return {string}
@@ -12030,7 +12030,7 @@ var exec = require('child_process').exec
 function which(name) {
   var paths = process.env.PATH.split(':');
   var loc;
-  
+
   for (var i = 0, len = paths.length; i < len; ++i) {
     loc = path.join(paths[i], name);
     if (exists(loc)) return loc;

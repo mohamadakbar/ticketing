@@ -27,7 +27,7 @@
                                 <tr>
                                     <th scope="col">ID</th>
                                     <th scope="col">Ticket From</th>
-                                    <th scope="col" style="width: 30%">Div</th>
+                                    <th scope="col" style="width: 30%">To</th>
                                     <th scope="col" style="width: 20%">Status</th>
                                     <th scope="col" style="width: 20%">Action</th>
                                 </tr>
@@ -243,7 +243,7 @@
     {{--                //         _token: $("#csrf").val(),--}}
     {{--                //         id: id,--}}
     {{--                //         user: $("#user").data('id'),--}}
-    {{--                //         cat: $("#cat").data('id'),--}}
+    {{--                //         category: $("#category").data('id'),--}}
     {{--                //         com: 'shortcut',--}}
     {{--                //         sts: sts--}}
     {{--                //     },--}}
@@ -276,7 +276,7 @@
     {{--                //         _token: $("#csrf").val(),--}}
     {{--                //         id: id,--}}
     {{--                //         user: $("#user").data('id'),--}}
-    {{--                //         cat: $("#cat").data('id'),--}}
+    {{--                //         category: $("#category").data('id'),--}}
     {{--                //         com: 'asd',--}}
     {{--                //         sts: sts--}}
     {{--                //     },--}}
@@ -309,7 +309,7 @@
     {{--            //             _token: $("#csrf").val(),--}}
     {{--            //             id: id,--}}
     {{--            //             user: $("#user").data('id'),--}}
-    {{--            //             cat: $("#cat").data('id'),--}}
+    {{--            //             category: $("#category").data('id'),--}}
     {{--            //             com: 'asd',--}}
     {{--            //             sts: sts--}}
     {{--            //         },--}}
