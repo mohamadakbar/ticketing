@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="acce1e9e-6ca4-409b-aaba-896f68ec63ce" name="CGW NOTIF 167">
+        <fileTransfer accessType="SFTP" host="172.17.0.167" port="22" sshConfigId="4b754030-38bd-4e76-a2f3-16e5579049e5" sshConfig="sujoko@172.17.0.167:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="04655f66-80e4-4972-871c-063c15e10a9b" name="CGW NOTIF 168">
+        <fileTransfer accessType="SFTP" host="172.17.0.168" port="22" sshConfigId="b64301d2-5365-4958-97fb-2cbe582c2f9b" sshConfig="sujoko@172.17.0.168:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="f83bb5ee-3c87-4247-8187-0ad97d67801e" name="RECV 227">
+        <fileTransfer accessType="SFTP" host="172.17.0.227" port="22" sshConfigId="c6741018-756f-4ff7-88c1-15318682d88b" sshConfig="sujoko@172.17.0.227:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="8747b0d0-a7d2-4023-9f3a-7af211aa481c" name="SEND 225">
+        <fileTransfer accessType="SFTP" host="172.17.0.225" port="22" sshConfigId="aec0dfd4-f2b0-4e9a-baa4-4491b7e54008" sshConfig="sujoko@172.17.0.225:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="802428cd-b24b-45d8-8b40-8f9c3fa60f1f" name="SEND 226">
+        <fileTransfer accessType="SFTP" host="172.17.0.226" port="22" sshConfigId="f9f84652-ec07-4878-ac7e-0fc9f6adc295" sshConfig="sujoko@172.17.0.226:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+    <groups>
+      <group>
+        <name>BRI</name>
+        <servers>
+          <name value="CGW NOTIF 167" />
+          <name value="CGW NOTIF 168" />
+          <name value="RECV 227" />
+          <name value="SEND 225" />
+          <name value="SEND 226" />
+        </servers>
+      </group>
+    </groups>
+  </component>
+</project>
