@@ -5,7 +5,7 @@
     <div class="col-md-12 col-sm-12 ">
         <div class="x_panel">
             <div class="x_title">
-                <h2>{{ ucfirst(Request::segment(1)) }} <small><a href="#" data-toggle="modal" data-target="#createModal" class="btn btn-success btn-sm">Create new</a></small>
+                <h2> {{ ucfirst(Request::segment(1)) }} <small><a href="#" data-toggle="modal" data-target="#createModal" class="btn btn-success btn-sm">Create new</a></small>
                 </h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
@@ -18,7 +18,7 @@
                     <div class="col-sm-12">
                         <div class="card-box table-responsive">
                             <p class="text-muted font-13 m-b-30">
-                                Detail of divison list
+                                Detail of {{ Request::segment(1) }} list
                             </p>
                             <table id="datatable-keytable" class="table table-striped table-bordered"
                                    style="width:100%">
@@ -30,12 +30,12 @@
                                 </thead>
 
                                 <tbody>
-                                @foreach($category as  $cat)
+                                @foreach($status as $sts)
                                     <tr>
-                                        <td class="name_list{{ $cat->id }}">{{ $cat->name }}</td>
+                                        <td class="name_list{{ $sts->id }}">{{ $sts->name }}</td>
                                         <td>
-                                            <a href="#" data-id="{{ $cat->id }}" value="{{ $cat->id }}" class="editForm" data-toggle="modal" data-target="#editModal" style="color: #ffac17">Edit</a>
-                                            <a href="{{ url('category/destroy/') }}/{{ $cat->id }}" onclick="return confirm('Are you sure delete this data?')" style="color: red">Delete</a>
+                                            <a href="#" data-id="{{ $sts->id }}" value="{{ $sts->id }}" class="editForm" data-toggle="modal" data-target="#editModal" style="color: #ffac17">Edit</a>
+                                            <a href="{{ url('status/destroy/') }}/{{ $sts->id }}" onclick="return confirm('Are you sure delete this data?')" style="color: red">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -54,16 +54,16 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Create Division</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Create {{ ucfirst(Request::segment(1)) }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{ url('category/store') }}" method="POST">
+                <form action="{{ url('status/store') }}" method="POST">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Division Name:</label>
+                            <label for="recipient-name" class="col-form-label">Status Name:</label>
                             <input type="text" class="form-control" name="name">
                         </div>
                     </div>
@@ -106,28 +106,23 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script>
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-    </script>
+
     <script>
         $(document).on("click", ".editForm", function () {
             var id = $(this).data('id');
 
+            // console.log(id);
+
             $.ajax({
                 type:"POST",
-                url: "category/edit/"+id,
+                url: "status/edit/"+id,
                 data:{
                     "_token": "{{ csrf_token() }}"
                 },
                 dataType:'json',
                 success:function (data) {
-                    var dt = data.cat;
-                    $('.names').val(dt.name);
-                    $('.ids').val(dt.id);
+                    $('.names').val(data.name);
+                    $('.ids').val(data.id);
                 }
             });
         });
@@ -136,7 +131,7 @@
 
             $.ajax({
                 type:"POST",
-                url: "category/update/",
+                url: "status/update/",
                 data: {
                     "_token": "{{ csrf_token() }}",
                     name: $("#name").val(),

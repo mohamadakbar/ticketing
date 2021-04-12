@@ -4,7 +4,7 @@
     <div class="col-md-12 col-sm-12 ">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Ticket <small><a href="{{ url('ticket/create') }}" class="btn btn-success btn-sm">Create
+                <h2>{{ ucfirst(Request::segment(1)) }} <small><a href="{{ url('ticket/create') }}" class="btn btn-success btn-sm">Create
                             new</a></small>
                 </h2>
                 <ul class="nav navbar-right panel_toolbox">

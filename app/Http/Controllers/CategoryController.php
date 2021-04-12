@@ -69,7 +69,7 @@ class CategoryController extends Controller
     {
         $cat = Category::find($id);
 
-        return response()->json(['cat'=>$cat, 'status' => 200]);;
+        return response()->json(['cat'=>$cat],'200');;
     }
 
     /**
@@ -81,7 +81,6 @@ class CategoryController extends Controller
      */
     public function update(Request $request)
     {
-//        dd($request->all());
         $this->validate($request,[
             'name'      => 'required',
         ]);
@@ -94,7 +93,6 @@ class CategoryController extends Controller
         }else{
             return response()->json(['status' => 500]);
         }
-//        return redirect('category')->with('alert-success', 'Success update data');
     }
 
     /**

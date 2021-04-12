@@ -45,3 +45,8 @@ Route::post('category/edit/{id}', 'CategoryController@edit')->name('category.edi
 Route::post('category/update/', 'CategoryController@update')->name('category.update');
 Route::get('category/destroy/{id}', 'CategoryController@destroy')->name('category.destroy');
 
+Route::get('status', 'StatusController@index')->name('status');
+Route::post('status/store', 'StatusController@store')->name('status.store');
+Route::post('status/edit/{id}', 'StatusController@edit')->name('status.edit');
+Route::post('status/update/', 'StatusController@update')->name('status.update');
+Route::get('status/destroy/{id}', 'StatusController@destroy')->name('status.destroy');
