@@ -139,12 +139,30 @@
                   </div> --}}
                   <p class="sign-up">Don't have an Account?<a href="{{ route('register') }}"> Sign Up</a></p>
                 </form>
-                @error('password')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
               </div>
+                <!-- show notif -->
+                @if (session('alert-success'))
+                    <div id="floating-alert">
+                        <div class="alert alert-success">
+                            <strong>{{ session('alert-success') }}</strong>
+                        </div>
+                    </div>
+                @endif
+                @if (session('alert-danger'))
+                    <div id="floating-alert">
+                        <div class="alert alert-danger">
+                            <strong>{{ session('alert-danger') }}</strong>
+                        </div>
+                    </div>
+                @endif
+                @if (session('alert-warning'))
+                    <div id="floating-alert">
+                        <div class="alert alert-warning">
+                            <strong>{{ session('alert-warning') }}</strong>
+                        </div>
+                    </div>
+            @endif
+            <!-- show notif -->
             </div>
           </div>
           <!-- content-wrapper ends -->
@@ -165,6 +183,26 @@
     <script src="{{ asset('assets/') }}/js/misc.js"></script>
     <script src="{{ asset('assets/') }}/js/settings.js"></script>
     <script src="{{ asset('assets/') }}/js/todolist.js"></script>
+
+    <script>
+        window.setTimeout(function() {
+            $(".alert-success").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+            });
+        }, 4000);
+
+        window.setTimeout(function() {
+            $(".alert-danger").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+            });
+        }, 4000);
+
+        window.setTimeout(function() {
+            $(".alert-warning").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+            });
+        }, 4000);
+    </script>
     <!-- endinject -->
   </body>
 </html>

@@ -102,16 +102,12 @@ class TicketController extends Controller
      */
     public function update(Request $request, $id)
     {
-//        dd($request->all());
         $check = TicketDetail::where('status_id', '=', $request->sts_id, 'and')->where('ticket_id', '=', $id)->count();
-//        dd($check);
-
 
         if (!$request->sts_id){
             TicketDetail::create([
                 'ticket_id' => $id,
                 'comment' => $request->comment,
-//                'status_id' => $request->sts_id,
                 'user_id' => $request->user_id
             ]);
         }else{
@@ -130,8 +126,7 @@ class TicketController extends Controller
             ]);
         }
 
-
-        return redirect('ticket')->with('alert-success', 'Data has been updated');
+        return redirect('ticket/detail/'.$id)->with('alert-success', 'Comment has been added');
     }
 
     /**

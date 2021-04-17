@@ -1,5 +1,7 @@
 <?php
 namespace App\Helpers;
+use App\User;
+use Auth;
 use Illuminate\Support\Facades\DB;
 
 class AccessHelper{
@@ -14,6 +16,16 @@ class AccessHelper{
 
         return $access;
     }
+
+//    public static function user_status($id){
+//        $user   = User::find($id);
+//        $sts    = $user->status;
+//
+//        if ($sts == '0'){
+//            Auth::logout();
+//            return redirect('/')->with('alert-success', 'Your account is not active, please contact your administrator');
+//        }
+//    }
 }
 
 ?>

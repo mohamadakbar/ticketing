@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dosen;
 use App\Models\Ticket;
+use App\User;
 use Illuminate\Http\Request;
 use App\Models\Access;
 use Auth;
@@ -28,6 +29,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $sts       = Auth::user()->status;
+        if ($sts == '0'){
+            Auth::logout();
+            return redirect('/')->with('alert-success', 'Your account is not active, please contact your administrator');
+        }
         $dosen      = Dosen::all()->count();
         $new     = Ticket::where('status_id', 4)->count();
         $on     = Ticket::where('status_id', 3)->count();

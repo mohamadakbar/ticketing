@@ -36,36 +36,38 @@
                                 <tbody>
                                 @php
                                     $user_id    = Auth::user()->id;
+                                    $role       = Auth::user()->role;
                                 @endphp
                                 @foreach($ticket as $tiket)
                                     <tr>
                                         <td id="id{{ $tiket->id}}">{{ $tiket->id }}</td>
                                         <td id="user{{ $tiket->id}}">{{ $tiket->user->name }}</td>
                                         <td id="cat{{ $tiket->id}}">{{ $tiket->category->name }}</td>
-                                        <td id="sts{{ $tiket->id}}"><span
-                                                class="{{ $tiket->status->layout }}">{{ $tiket->status->name }}</span>
-                                        </td>
+                                        <td id="sts{{ $tiket->id}}"><span class="{{ $tiket->status->layout }}">{{ $tiket->status->name }}</span></td>
                                         <td>
                                             <div class="btn-group">
                                                 <a class="btn btn-sm btn-success"
                                                    href="{{ url('ticket/detail')."/".$tiket->id }}"
                                                    style="color: #ffffff; font-size: 12px">Detail</a>
-                                                <button type="button" class="btn btn-warning btn-sm dropdown-toggle"
-                                                        data-toggle="dropdown" aria-haspopup="true"
-                                                        aria-expanded="false" style="color: #ffffff; font-size: 12px">
-                                                    Default
-                                                </button>
-                                                <a href="#" id="status" data-type="select" data-pk="1" data-url="/post"
-                                                   data-title="Select status"></a>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item doing" data-toggle="modal"
-                                                       data-target="#doneModal{{ $tiket->id }}">Done</a>
-                                                    <a class="dropdown-item doing" data-toggle="modal"
-                                                       data-target="#doingModal{{ $tiket->id }}">Doing</a>
-                                                    <a class="dropdown-item doing" data-toggle="modal"
-                                                       data-target="#pendingModal{{ $tiket->id }}">Pending</a>
-                                                    <div class="dropdown-divider"></div>
-                                                </div>
+                                                @if($role != '0')
+                                                    <button type="button" class="btn btn-warning btn-sm dropdown-toggle"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false" style="color: #ffffff; font-size: 12px">
+                                                        Change
+                                                    </button>
+                                                    <a href="#" id="status" data-type="select" data-pk="1" data-url="/post"
+                                                       data-title="Select status"></a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item doing" data-toggle="modal"
+                                                           data-target="#doneModal{{ $tiket->id }}">Done</a>
+                                                        <a class="dropdown-item doing" data-toggle="modal"
+                                                           data-target="#doingModal{{ $tiket->id }}">Doing</a>
+                                                        <a class="dropdown-item doing" data-toggle="modal"
+                                                           data-target="#pendingModal{{ $tiket->id }}">Pending</a>
+                                                        <div class="dropdown-divider"></div>
+                                                    </div>
+                                                @endif
+
                                             </div>
                                         </td>
                                     </tr>
@@ -76,7 +78,7 @@
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Please add your comment</h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
@@ -117,7 +119,7 @@
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal doing</h5>
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Please add your comment</h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
@@ -158,7 +160,7 @@
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal doing</h5>
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Please add your comment</h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
